@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+DATA_FILE_PATH = "recordings.bin"
+
 
 def avg(record, window):
     return np.array([sum(record[i: i + window]) / window for i in range(0, len(record), window)])
@@ -35,3 +37,7 @@ def _find_continuous_times_when_biger_then_threshold_for_record(times_in_single_
         intervals.append(interval)
 
     return intervals
+
+
+def pre_kmeans(data):
+    print(data)
